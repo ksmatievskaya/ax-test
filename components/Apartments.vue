@@ -41,6 +41,19 @@
                     <button class="apartments__choose_btn">by parameters</button>
                 </div>
             </div>
+
+            <div class="apartments__btn_container">
+                <div class="apartments__btn_title">change view</div>
+                <div class="apartments__btn_box">
+                    <button id="leftBtn" @click="handleView" class="apartments__btn_arrow">
+                        <img src="../static/left.svg" alt="left">
+                    </button>
+                    <div class="apartments__btn_descr">boulevard view</div>
+                    <button id="rightBtn" @click="handleView" class="apartments__btn_arrow">
+                        <img src="../static/right.svg" alt="right">
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
 </template>
@@ -54,17 +67,39 @@
         setup() {
             const apartmentsBg = ref('../static/dayApartment.png');
             const isDay = ref(true);
+            const isBoulevardView = ref(true);
             const toggleButton = ref(0);
             const toggleButtonX = ref(0);
             
             function handleMove() {
                 isDay.value = !isDay.value;
                 if (isDay.value) {
-                apartmentsBg.value = "../static/dayApartment.png";
-                gsap.to(toggleButton.value, { duration: 0.5, x: 0 });
+                    apartmentsBg.value = "../static/dayApartment.png";
+                    gsap.to(toggleButton.value, { duration: 0.5, x: 0 });
                 } else {
-                apartmentsBg.value = "../static/nightApartment.png";
-                gsap.to(toggleButton.value, { duration: 0.5, x: 43 });
+                    apartmentsBg.value = "../static/nightApartment.png";
+                    gsap.to(toggleButton.value, { duration: 0.5, x: 43 });
+                }
+            }
+
+            function handleView(e) {
+                if(e.target.closest('#leftBtn') && isBoulevardView.value) {
+                    return
+                }
+
+                if(e.target.closest('#rightBtn') && !isBoulevardView.value) {
+                    return
+                }
+
+                isBoulevardView.value = !isBoulevardView.value
+                if(isBoulevardView.value) {
+                   isDay.value 
+                    ? apartmentsBg.value = "../static/dayApartment.png"
+                    : apartmentsBg.value = "../static/nightApartment.png"
+                } else {
+                    apartmentsBg.value = '../static/backView.png';
+                    isDay.value = true;
+                    gsap.to(toggleButton.value, { duration: 0.5, x: 0 });
                 }
             }
 
@@ -73,7 +108,7 @@
                 toggleButtonX.value = toggleButton.value.getBoundingClientRect().x;
             })
 
-            return {apartmentsBg, isDay, handleMove}
+            return {apartmentsBg, isDay, handleMove, handleView}
         },
         components: {BurgerMenu}
     }
