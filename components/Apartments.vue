@@ -15,6 +15,32 @@
                     <BurgerMenu/>
                 </div>
             </div>
+
+            <div class="apartments__compas-container">
+                <img src="../static/compas.svg" alt="compas north">
+            </div>
+
+            <div class="apartments__choose-container">
+                <div class="apartments__choose">
+                    <div class="apartments__choose_title">
+                        choose
+                        <br/>
+                        Building
+                    </div>
+
+                    <div class="apartments__choose_subtitle">
+                        select the Building
+                        <br/>
+                        to then select the
+                        <br/>
+                        appropriate apartment
+                        <br/>
+                        or use parametr search
+                    </div>
+
+                    <button class="apartments__choose_btn">by parameters</button>
+                </div>
+            </div>
         </div>
     </section>
 </template>
