@@ -33,13 +33,28 @@
 }
 
 .apartments__toggle {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 14px;
+    padding: 0 12px;
     margin-right: 25px;
     background-color: var(--white);
     width: 88px;
     height: 45px;
     border-radius: 120px;
+}
+
+.apartments__toggle_img {
+    z-index: 100;
+}
+
+.apartments__toggle_btn {
+    position: absolute;
+    top: 4px;
+    left: 3px;
+    background-color: var(--orange);
+    width: 37px;
+    height: 37px;
+    border-radius: 18.5px;
 }
