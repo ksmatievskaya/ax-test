@@ -104,7 +104,6 @@
                     BOULEVARD
                 </div>
                 <button class="boulevard__button"><NuxtLink to="/boulevard" class="boulevard__link"> VISIT</NuxtLink></button>
-                
             </div>
         </section>
     </div>
@@ -112,8 +111,10 @@
 
 <script>
     import BurgerMenu from './BurgerMenu.vue';
+
     export default {
     name: "MainLanding",
     components: { BurgerMenu },
+   
 }
 </script>

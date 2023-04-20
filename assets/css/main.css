@@ -226,8 +226,6 @@
 .boulevard__link {
     color: var(--white);
     text-decoration: none;
-    font-size: 13px;
-    line-height: 17px;
 }
 
 .boulevard__link:hover {

@@ -8,7 +8,8 @@ export default defineNuxtConfig({
                   href: 'https://cdn.jsdelivr.net/npm/bootstrap-reboot@4.5.6/reboot.min.css'
                 }
               ],
-        }
+        },
+        pageTransition: { name: 'page', mode: 'out-in' }
     },
     css: [
         '@/assets/css/main.css',
@@ -18,5 +19,10 @@ export default defineNuxtConfig({
         '@/assets/css/burger.css',
         '@/assets/css/testVideo.css',
         '@/assets/css/apartments.css',
-    ]
+    ],
+
+    plugins: [
+        { src: '~/router.js', mode: 'client' },
+      ],
+
 })

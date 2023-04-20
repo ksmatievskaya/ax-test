@@ -1,5 +1,6 @@
 <template>
-    <section class="apartments">
+    <div class="apartments__container">
+        <section class="apartments">
         <img class="apartments__bg-day" :src="apartmentsBg" alt="day apartments">
 
         <div class="apartments__content">
@@ -11,7 +12,7 @@
                 <img  @click="handleActiveBuilding('g')" class="apartments_g-img" :src="gBuilding" alt="g apartment day">
                 <div v-if="activeBuilding === 'g'" class="apartments__overlay-g"></div>
                 <img  @click="handleActiveBuilding('a')" class="apartments_a-img" :src="aBuilding" alt="a apartment day">
-                <div v-if="activeBuilding === 'a'" class="apartments__overlay-a"></div>
+                <!-- <div v-if="activeBuilding === 'a'" class="apartments__overlay-a"></div> -->
 
         </template>
         <template v-else>
@@ -75,6 +76,7 @@
             </div>
         </div>
     </section>
+    </div>
 </template>
 
 <script>
