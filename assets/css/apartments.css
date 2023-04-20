@@ -85,7 +85,7 @@
     text-transform: uppercase;
     background-color: var(--brown);
     margin-right: 120px;
-
+    z-index: 1000;
 }
 
 .apartments__choose_title {
@@ -154,4 +154,113 @@
     height: 50px;
     border-radius: 1000px;
     margin: 0 20px;
+}
+
+.apartments__overlay-a {
+    position: absolute;
+    width: 399px;
+    height: 598px;
+    background-color: var(--orange);
+    opacity: 0.5;
+    mask: url('../../static/aDay.svg') no-repeat;
+    top: 280px;
+    left: 483px;
+    z-index: 100;
+}
+
+.apartments__overlay-g {
+    position: absolute;
+    width: 248px;
+    height: 467px;
+    background-color: var(--orange);
+    opacity: 0.5;
+    mask: url('../../static/gDay.svg') no-repeat;
+    top: 165px;
+    left: 985px;
+    z-index: 100;
+}
+
+.apartments__overlay-d {
+    position: absolute;
+    width: 321px;
+    height: 510px;
+    background-color: var(--orange);
+    opacity: 0.5;
+    mask: url('../../static/dDay.svg') no-repeat;
+    top: 288px;
+    left: 1050px;
+    z-index: 100;
+}
+
+.apartments__overlay-b {
+    position: absolute;
+    width: 244px;
+    height: 446px;
+    background-color: var(--orange);
+    opacity: 0.5;
+    mask: url('../../static/bDay.svg') no-repeat;
+    top: 165px;
+    left: 700px;
+    z-index: 100;
+}
+
+.apartments_b-img {
+    position: absolute;
+    top: 165px;
+    left: 700px;
+}
+
+.apartments_g-img {
+    position: absolute;
+    top: 165px;
+    left: 985px;
+}
+
+.apartments_a-img {
+    position: absolute;
+    top: 280px;
+    left: 488px;
+    z-index: 100;
+}
+
+.apartments_d-img {
+    position: absolute;
+    top: 288px;
+    left: 1050px;
+}
+
+.apartments__overlay-d-view {
+    position: absolute;
+    width: 387px;
+    height: 459px;
+    background-color: var(--orange);
+    opacity: 0.5;
+    mask: url('../../static/dDayView.svg') no-repeat;
+    top: 305px;
+    left: 590px;
+    z-index: 100;
+}
+
+.apartments__overlay-g-view {
+    position: absolute;
+    width: 439px;
+    height: 630px;
+    background-color: var(--orange);
+    opacity: 0.5;
+    mask: url('../../static/gDayView.svg') no-repeat;
+    top: 105px;
+    left: 1055px;
+    z-index: 100;
+}
+
+.apartments_d-img-view {
+    position: absolute;
+    top: 305px;
+    left: 590px;
+}
+
+.apartments_g-img-view {
+    position: absolute;
+    top: 105px;
+    left: 1055px;
 }
