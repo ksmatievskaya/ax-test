@@ -1,6 +1,6 @@
 <template>
-   
-      <div class="boulevard-video__background">
+  <div>
+    <div class="boulevard-video__background">
         <div class="boulevard-video__video-container">
             <video src="../static/artlife.mp4" type="video/mp4" id="bgVideo" class="boulevard-video__video">
           <!-- <source src="../static/artlife.mp4" type="video/mp4" /> -->
@@ -10,9 +10,10 @@
     </div>
 
     <div class="boulevard-video__content">
+      <BurgerMenuNav :isOpened="isOpened" @close="isOpened = false" />
         <div class="boulevard-video__top">
           <img class="boulevard-video__logo" src="../static/boulevardLogo.svg" alt="artlife logo">
-          <BurgerMenu/>
+          <BurgerMenu :isOpened="isOpened" @update:isOpened="updateIsOpened" />
         </div>
         <div class="boulevar-video__text-box">
           <div class="boulevard-video__subtitle">your personal</div>
@@ -65,12 +66,14 @@
     </section>
 
   </div>
+  </div>
   
   </template>
 
 
 <script>
 import BurgerMenu from './BurgerMenu.vue';
+import BurgerMenuNav from './BurgerMenuNav.vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger} from 'gsap/ScrollTrigger';
 
@@ -78,40 +81,50 @@ import { ScrollTrigger} from 'gsap/ScrollTrigger';
 
 export default {
     name: "BoulevardVideo",
-    components: { BurgerMenu },
-    mounted() {
-          gsap.registerPlugin(ScrollTrigger);
-    const bgVideo = document.querySelector("#bgVideo");
-    bgVideo.pause();
-    bgVideo.currentTime = 0;
-    let sections = gsap.utils.toArray(".ste");
-    sections.forEach((step, i) => {
-        ScrollTrigger.create({
-            trigger: step,
-            start: "bottom bottom",
-            end: "+=1000",
-            pin: true,
-            anticipatePin: 1,
-        });
-        gsap.fromTo(bgVideo, { currentTime: i * 3 }, {
-            scrollTrigger: {
+    components: { BurgerMenu, BurgerMenuNav },
+    setup() {
+      const isOpened = ref(false);
+
+      const updateIsOpened = (value) => {
+          isOpened.value = value;  
+      };
+
+      onMounted(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        const bgVideo = document.querySelector("#bgVideo");
+        // bgVideo.pause();
+        bgVideo.currentTime = 0;
+        let sections = gsap.utils.toArray(".ste");
+        sections.forEach((step, i) => {
+            ScrollTrigger.create({
                 trigger: step,
-                scrub: 0.5,
-                start: "top bottom",
-                end: "bottom bottom",
-            },
-            currentTime: 3 * (i + 1),
-            duration: 1,
-            ease: "none",
+                start: "bottom bottom",
+                end: "+=1000",
+                pin: true,
+                anticipatePin: 1,
+            });
+            gsap.fromTo(bgVideo, { currentTime: i * 3 }, {
+                scrollTrigger: {
+                    trigger: step,
+                    scrub: 0.5,
+                    start: "top bottom",
+                    end: "bottom bottom",
+                },
+                currentTime: 3 * (i + 1),
+                duration: 1,
+                ease: "none",
+            });
         });
-    });
-    gsap.to("#bgVideo", {
-        scrollTrigger: {
-            scrub: true
-        },
-        // scale: 1.5
-    })
+        gsap.to("#bgVideo", {
+            scrollTrigger: {
+                scrub: true
+            },
+            // scale: 1.5
+        })
     
-}
+      })
+
+      return {isOpened, updateIsOpened}
+    },
 }
 </script>

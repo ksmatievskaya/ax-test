@@ -1,7 +1,12 @@
 <template>
-  <div>
+  <!-- <div>
     <NuxtPage></NuxtPage>
-  </div>
+  </div> -->
+  <router-view v-slot="{ Component }">
+  <transition :name="'page'">
+    <component :is="Component" />
+  </transition>
+</router-view>
 </template>
 
 
@@ -23,4 +28,12 @@
 .page-leave-to {
   transform: translateY(-100%);
 }
+
 </style>
+
+
+
+
+
+
+

@@ -80,6 +80,7 @@
   }
 
   .boulevard-video__top {
+    position: fixed;
     width: 50%;
     margin-left: 47%;
     display: flex;
@@ -93,7 +94,7 @@
     flex-direction: column;
     align-items: center;
     text-transform: uppercase;
-    margin-top: 250px;
+    margin-top: 314px;
   }
 
   .boulevard-video__subtitle {
@@ -113,9 +114,106 @@
     flex-direction: column;
     align-items: flex-end;
     margin-right: 141px;
+    margin-top: 184px;
   }
 
   .boulevard-video__scroll-img {
     width: 175px;
     height: 175px;
+  }
+
+  @media screen and (max-height: 990px) {
+    .boulevard-video__scroll-img_container {
+      margin-top: 134px;
+    }
+  }
+
+  @media screen and (max-height: 935px) {
+    .boulevar-video__text-box {
+      margin-top: 270px;
+    }
+
+    .boulevard-video__scroll-img_container {
+      margin-top: 114px;
+    }
+  }
+
+  @media screen and (max-height: 875px) {
+    .boulevar-video__text-box {
+      margin-top: 250px;
+    }
+
+    .boulevard-video__scroll-img_container {
+      margin-top: 94px;
+    }
+
+    .boulevard-video__scroll-img {
+      width: 155px;
+      height: 155px;
+    }
+  }
+
+  @media screen and (max-height: 810px) {
+    .boulevar-video__text-box {
+      margin-top: 240px;
+    }
+
+    .boulevard-video__scroll-img_container {
+      margin-top: 64px;
+    }
+
+    .boulevard-video__scroll-img {
+      width: 135px;
+      height: 135px;
+    }
+  }
+
+  @media screen and (max-height: 750px) {
+    .boulevar-video__text-box {
+      margin-top: 210px;
+    }
+
+    .boulevard-video__scroll-img_container {
+      margin-top: 44px;
+    }
+
+    .boulevard-video__scroll-img {
+      width: 115px;
+      height: 115px;
+    }
+  }
+
+  @media screen and (max-height: 680px) {
+    .boulevar-video__text-box {
+      margin-top: 190px;
+    }
+
+    .boulevard-video__scroll-img_container {
+      margin-top: 30px;
+    }
+
+    .boulevard-video__scroll-img {
+      width: 105px;
+      height: 105px;
+    }
+
+    .boulevard-video__title {
+      font-size: 58px;
+      line-height: 64px;
+    }
+  }
+
+  @media screen and (max-height: 615px) {
+    .boulevar-video__text-box {
+      margin-top: 170px;
+    }
+
+    .boulevard-video__scroll-img_container {
+      margin-top: 20px;
+    }
+
+    .boulevard-video__title {
+      font-size: 54px;
+      line-height: 60px;
+    }
   }
