@@ -20,7 +20,6 @@ export default defineNuxtConfig({
         '@/assets/css/testVideo.css',
         '@/assets/css/apartments.css',
         '@/assets/css/burgerMenu.css',
-        '@/assets/css/transitions.css',
     ],
 
     plugins: [

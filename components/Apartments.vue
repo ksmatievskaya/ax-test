@@ -99,66 +99,44 @@
             // функция для изменения темы (день или ночь)
             function handleMove() {
                 isDay.value = !isDay.value;
-                if (isDay.value) {
-                    // анимация перехода между ночной и светлой темой
-                    gsap.to(bgImg.value, {
+                const newBgImgSrc = isDay.value ? '../static/dayApartment.png' : '../static/nightApartment.png';
+                bgImg.value.src = newBgImgSrc;
+
+                gsap.to(bgImg.value, {
                     duration: 0.5,
                     opacity: 0,
                     onComplete: () => {
-                        bgImg.value.src = '../static/dayApartment.png';
-                        gsap.to(bgImg.value, { duration: 0.2, opacity: 1 });
+                    gsap.to(bgImg.value, { duration: 0.2, opacity: 1 });
                     },
                 });
-                    // анимация для плавного перемещения кнопки
-                    gsap.to(toggleButton.value, { duration: 0.5, x: 0 });
-                } else {
-                    gsap.to(bgImg.value, {
-                    duration: 0.5,
-                    opacity: 0,
-                    onComplete: () => {
-                        bgImg.value.src =  '../static/nightApartment.png';
-                        gsap.to(bgImg.value, { duration: 0.2, opacity: 1 });
-                    },
-                    });
-                    gsap.to(toggleButton.value, { duration: 0.5, x: 43 });
-                }
+                gsap.to(toggleButton.value, { duration: 0.5, x: isDay.value ? 0 : 43 });
+                
             }
 
             function handleView(e) {
+                // если на первом фоне, то при нажатии на левую стрелку - ничего не происходит
                 if(e.target.closest('#leftBtn') && isBoulevardView.value) {
                     return
                 }
-
+                // если на втором фоне, то при нажатии на правую стрелку - ничего не происходит
                 if(e.target.closest('#rightBtn') && !isBoulevardView.value) {
                     return
                 }
 
                 isBoulevardView.value = !isBoulevardView.value
-                if(isBoulevardView.value) {
-                    activeBuilding.value = 'a'
-                   isDay.value 
-                    ? bgImg.value.src = "../static/dayApartment.png"
-                    : bgImg.value.src = "../static/nightApartment.png"
-                } else {
-                    // bgImg.value.src = "../static/backView.png"
-                    gsap.to(bgImg.value, {
-                        duration: 0.5,
-                        x: '-100%',
-                        ease: 'power2.inOut',
-                        onComplete: () => {
-                            bgImg.value.src = "../static/backView.png"
-                        },
-                    });
-                    gsap.to(bgImg.value, {
-                            duration: 0.5,
-                            x: '100%',
-                            ease: 'power2.inOut',
-                          
-                        });
-                    activeBuilding.value = 'd-view';
-                    isDay.value = true;
-                    gsap.to(toggleButton.value, { duration: 0.5, x: 0 });
-                }
+                const newBgImgSrc = isBoulevardView.value ? (isDay.value ? '../static/dayApartment.png' : '../static/nightApartment.png') : '../static/backView.png';
+                bgImg.value.src = newBgImgSrc;
+                gsap.to(bgImg.value, {
+                    duration: 0.4,
+                    opacity: 0.2,
+                    onComplete: () => {
+                    gsap.to(bgImg.value, { duration: 0.2, opacity: 1 });
+                    },
+                });
+                activeBuilding.value = 'd-view';
+                isDay.value = true;
+                gsap.to(toggleButton.value, { duration: 0.5, x: 0 });
+                
             }
 
             function handleActiveBuilding(active) {
