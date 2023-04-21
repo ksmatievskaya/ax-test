@@ -1,12 +1,8 @@
 <template>
     <div class="main-landing">
+        <BurgerMenuNav :isOpened="isOpened" @close="isOpened = false" />
         <section class="logo">
-            <!-- <div class="logo__burger">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div> -->
-            <BurgerMenu/>
+            <BurgerMenu  :isOpened="isOpened" @update:isOpened="updateIsOpened"/>
 
             <div class="logo__header">
                 <div class="logo__header_lux header-big">LUXURY</div>
@@ -111,10 +107,22 @@
 
 <script>
     import BurgerMenu from './BurgerMenu.vue';
+    import BurgerMenuNav from './BurgerMenuNav.vue';
 
     export default {
     name: "MainLanding",
-    components: { BurgerMenu },
-   
+    components: { BurgerMenu, BurgerMenuNav },
+    setup() {
+        const isOpened = ref(false);
+
+        const updateIsOpened = (value) => {
+            isOpened.value = value;  
+        };
+
+    return { isOpened, updateIsOpened };
+
+    },
+
+
 }
 </script>
