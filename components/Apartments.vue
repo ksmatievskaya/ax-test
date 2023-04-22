@@ -111,6 +111,7 @@
 
             const updateIsOpened = (value) => {
                 isOpened.value = value;  
+                console.log(isOpened.value)
             };
            
 
@@ -205,7 +206,6 @@
                     duration: 0.5,
                 });
                 activeOverlay.value = clickedOverlay;
-                console.log(clickedOverlay)
             }
 
             onMounted(() => {

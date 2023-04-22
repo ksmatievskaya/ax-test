@@ -14,7 +14,7 @@
             <!-- <NuxtLink to="/boulevard" class="burger-menu__link">French boulevard</NuxtLink> -->
             <router-link class="burger-menu__link" to="/boulevard">French boulevard</router-link>
         </li>
-        <li class="burger-menu__item">
+        <li @click="closeMenu" class="burger-menu__item">
             <img class="burger-menu__item-arrow"  src="../static/right.svg" alt="go to">
             <!-- <NuxtLink to="/apartments" class="burger-menu__link">Choose apartments</NuxtLink> -->
             <router-link class="burger-menu__link" to="/apartments">Choose apartments</router-link>
@@ -37,6 +37,7 @@
         const menuVisible = ref(false);
 
         const openMenu = () => {
+            menu.value.style.display = 'flex';
             gsap.to(menu.value, {
                 duration: 0.5,
                 x: '0',
