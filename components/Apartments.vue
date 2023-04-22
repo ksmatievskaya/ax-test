@@ -38,14 +38,16 @@
              
                 </template>
                 <template v-else>
-                    <div class="apartments__building_container">
-                        <!-- <div v-if="activeBuilding === 'd-view'" class="apartments__overlay-d-view"></div> -->
-                        <div v-if="activeBuilding === 'g-view'" class="apartments__overlay-g-view"></div>
+                    <div class="apartments__overlay-view__cont">
+                        <div class="apartments__overlay-view_container">
+                        <div @click="handleOverlay" class="apartments__overlay-dView"></div>
+                        <div @click="handleOverlay" class="apartments__overlay-gView"></div>
+                        </div>
                     </div>
                 </template>
 
             <!-- <div class="apartments__choose-container"> -->
-                <div class="apartments__choose">
+                <div :class="isBoulevardView ? 'apartments__choose' : 'apartments__choose-view'">
                     <div class="apartments__choose_title">
                         choose
                         <br/>
@@ -99,7 +101,7 @@
             const toggleButton = ref(0);
             const toggleButtonX = ref(0); 
             const isOpened = ref(false);
-            const activeOverlay = ref(null);
+            const activeOverlay = ref(isBoulevardView.value ? 'a' : 'dView');
 
             const updateIsOpened = (value) => {
                 isOpened.value = value;  
@@ -108,10 +110,15 @@
 
             // функция для изменения темы (день или ночь)
             function handleMove() {
+                if(!isBoulevardView.value) {
+                    return
+                }
+
                 isDay.value = !isDay.value;
                 const newBgImgSrc = isDay.value ? '../static/dayApartment.png' : '../static/nightApartment.png';
                 bgImg.value.src = newBgImgSrc;
 
+                // анимация изменения день/ночь фона
                 gsap.to(bgImg.value, {
                     duration: 0.5,
                     opacity: 0,
@@ -119,6 +126,7 @@
                     gsap.to(bgImg.value, { duration: 0.2, opacity: 1 });
                     },
                 });
+                // анимация плавного перемещения кнопки 
                 gsap.to(toggleButton.value, { duration: 0.5, x: isDay.value ? 0 : 43 });
                 
             }
@@ -143,7 +151,7 @@
                     gsap.to(bgImg.value, { duration: 0.2, opacity: 1 });
                     },
                 });
-                activeBuilding.value = 'd-view';
+                activeBuilding.value = 'dView';
                 isDay.value = true;
                 gsap.to(toggleButton.value, { duration: 0.5, x: 0 });
                 
