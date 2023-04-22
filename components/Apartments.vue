@@ -6,18 +6,7 @@
        
         <div class="apartments__content">
             
-            <template v-if="isBoulevardView">
-                <div v-if="activeBuilding === 'b'" class="apartments__overlay-b-non"></div>
-                <div v-if="activeBuilding === 'd'" class="apartments__overlay-d"></div>
-                <div v-if="activeBuilding === 'g'" class="apartments__overlay-g"></div>
-                <!-- <div v-if="activeBuilding === 'a'" class="apartments__overlay-a"></div>        -->
-                </template>
-                <template v-else>
-                    <div class="apartments__building_container">
-                        <!-- <div v-if="activeBuilding === 'd-view'" class="apartments__overlay-d-view"></div> -->
-                        <div v-if="activeBuilding === 'g-view'" class="apartments__overlay-g-view"></div>
-                    </div>
-                </template>
+          
             <div class="apartments__content_top">
                 <img class="apartments__logo" src="../static/boulevardLogo.svg" alt="logo">
 
@@ -31,9 +20,29 @@
                 </div>
             </div>
 
-            <div class="apartments__compas-container">
-                <img src="../static/compas.svg" alt="compas north">
-            </div>
+            <!-- <div class="apartments__compas-container"> -->
+                <img class="apartments__compas" src="../static/compas.svg" alt="compas north">
+            <!-- </div> -->
+
+            <template v-if="isBoulevardView">
+                <div class="apartments__cont">
+                    <div class="apartments__overlay-container">
+                    <div @click="handleOverlay" class="apartments__overlay-b"></div>
+                    <div @click="handleOverlay" class="apartments__overlay-d"></div>
+                    <div @click="handleOverlay" class="apartments__overlay-g"></div> 
+                    <div @click="handleOverlay" class="apartments__overlay-a"></div>      
+                    </div>
+                </div>
+               
+               
+             
+                </template>
+                <template v-else>
+                    <div class="apartments__building_container">
+                        <!-- <div v-if="activeBuilding === 'd-view'" class="apartments__overlay-d-view"></div> -->
+                        <div v-if="activeBuilding === 'g-view'" class="apartments__overlay-g-view"></div>
+                    </div>
+                </template>
 
             <!-- <div class="apartments__choose-container"> -->
                 <div class="apartments__choose">
@@ -84,12 +93,13 @@
         setup() {
             const apartmentsBg = ref('../static/dayApartment.png');
             const bgImg = ref(null);
-            const activeBuilding = ref('a')
+            const activeBuilding = ref('d')
             const isDay = ref(true);
             const isBoulevardView = ref(true);
             const toggleButton = ref(0);
             const toggleButtonX = ref(0); 
             const isOpened = ref(false);
+            const activeOverlay = ref(null);
 
             const updateIsOpened = (value) => {
                 isOpened.value = value;  
@@ -143,6 +153,28 @@
                 activeBuilding.value = active
             }
 
+            function handleOverlay(e) {
+                const clickedOverlay = e.target.classList[0].split('-')[1];
+                if (activeOverlay.value === clickedOverlay) {
+                    // Clicked on the active overlay, so do nothing
+                    return;
+                }
+
+                // Fade out the currently active overlay
+                if (activeOverlay.value) {
+                    gsap.to(`.apartments__overlay-${activeOverlay.value}`, {
+                    opacity: 0,
+                    duration: 0.5,
+                    });
+                }
+                gsap.to(`.apartments__overlay-${clickedOverlay}`, {
+                    opacity: 0.5,
+                    duration: 0.5,
+                });
+                activeOverlay.value = clickedOverlay;
+                console.log(activeOverlay.value)
+            }
+
             onMounted(() => {
                 toggleButton.value = document.querySelector('.apartments__toggle_btn');
                 toggleButtonX.value = toggleButton.value.getBoundingClientRect().x;
@@ -158,7 +190,9 @@
                     handleActiveBuilding,
                     bgImg,
                     isOpened,
-                    updateIsOpened
+                    updateIsOpened,
+                    handleOverlay,
+                    activeOverlay
                 }
         },
         components: {BurgerMenu, BurgerMenuNav}
