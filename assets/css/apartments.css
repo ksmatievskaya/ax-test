@@ -265,6 +265,96 @@
     z-index: 100;
 }
 
+.apartments__letter-A,
+.apartments__letter-B,
+.apartments__letter-D,
+.apartments__letter-G,
+.apartments__letter-dView,
+.apartments__letter-gView {
+    position: absolute;
+    background-color: var(--black);
+    color: var(--orange);
+    width: 49px;
+    height: 49px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    line-height: 28px;
+    border-radius: 100%;
+}
+
+.apartments__letter-A:after,
+.apartments__letter-B:after,
+.apartments__letter-D:after,
+.apartments__letter-G:after,
+.apartments__letter-dView:after,
+.apartments__letter-gView:after {
+    position: absolute;
+    content: ' ';
+    top: 90%;
+    left: 30%;
+    width: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+
+.apartments__letter-A:after {
+    border-top: 10px solid var(--pseudoColorA);
+}
+
+.apartments__letter-B:after {
+    border-top: 10px solid var(--pseudoColorB);
+}
+
+.apartments__letter-D:after {
+    border-top: 10px solid var(--pseudoColorD);
+}
+
+.apartments__letter-G:after {
+    border-top: 10px solid var(--pseudoColorG);
+}
+
+.apartments__letter-gView:after {
+    border-top: 10px solid var(--pseudoColorGView);
+}
+
+.apartments__letter-dView:after {
+    border-top: 10px solid var(--pseudoColorDView);
+}
+
+
+.apartments__letter-A {
+    left: 20%;
+    top: 25%;
+}
+
+.apartments__letter-B {
+    left: 30%;
+    top: 1%;
+}
+
+.apartments__letter-G {
+    right: 23%;
+    top: 1%;
+}
+
+.apartments__letter-D {
+    right: 15%;
+    top: 23%;
+}
+
+.apartments__letter-gView {
+    right: 25%;
+    top: 10%;
+}
+
+.apartments__letter-dView {
+    left: 27%;
+    top: 20%;
+}
+
+
 .apartments__overlay-view__cont {
     width: 100%;
     height: 678px;

@@ -27,10 +27,14 @@
             <template v-if="isBoulevardView">
                 <div class="apartments__cont">
                     <div class="apartments__overlay-container">
-                    <div @click="handleOverlay" class="apartments__overlay-b"></div>
-                    <div @click="handleOverlay" class="apartments__overlay-d"></div>
-                    <div @click="handleOverlay" class="apartments__overlay-g"></div> 
-                    <div @click="handleOverlay" class="apartments__overlay-a"></div>      
+                        <div class="apartments__letter-A">A</div>
+                        <div class="apartments__letter-B">B</div>
+                        <div class="apartments__letter-G">G</div>
+                        <div class="apartments__letter-D">D</div>
+                        <div @click="handleOverlay" class="apartments__overlay-b"></div>
+                        <div @click="handleOverlay" class="apartments__overlay-d"></div>
+                        <div @click="handleOverlay" class="apartments__overlay-g"></div> 
+                        <div @click="handleOverlay" class="apartments__overlay-a"></div>      
                     </div>
                 </div>
                
@@ -40,8 +44,10 @@
                 <template v-else>
                     <div class="apartments__overlay-view__cont">
                         <div class="apartments__overlay-view_container">
-                        <div @click="handleOverlay" class="apartments__overlay-dView"></div>
-                        <div @click="handleOverlay" class="apartments__overlay-gView"></div>
+                            <div class="apartments__letter-gView">G</div>
+                            <div class="apartments__letter-dView">D</div>
+                            <div @click="handleOverlay" class="apartments__overlay-dView"></div>
+                            <div @click="handleOverlay" class="apartments__overlay-gView"></div>
                         </div>
                     </div>
                 </template>
@@ -174,13 +180,32 @@
                     opacity: 0,
                     duration: 0.5,
                     });
+                    gsap.to(`.apartments__letter-${isBoulevardView.value ? activeOverlay.value.toUpperCase() : activeOverlay.value}`, {
+                    backgroundColor: '#232121',
+                    duration: 0.5,
+                    });
                 }
                 gsap.to(`.apartments__overlay-${clickedOverlay}`, {
                     opacity: 0.5,
                     duration: 0.5,
                 });
+                gsap.to(`.apartments__letter-${isBoulevardView.value ? clickedOverlay.toUpperCase() : clickedOverlay}`, {
+                    backgroundColor: '#fff',
+                    duration: 0.5,
+                    ease: 'power1.outIn'
+                    });
+
+                gsap.to("html", {
+                    '--pseudoColorA': clickedOverlay === 'a' ? '#fff' : '#232121',
+                    '--pseudoColorB': clickedOverlay === 'b' ? '#fff' : '#232121',
+                    '--pseudoColorD': clickedOverlay === 'd' ? '#fff' : '#232121',
+                    '--pseudoColorG': clickedOverlay === 'g' ? '#fff' : '#232121',
+                    '--pseudoColorGView': clickedOverlay === 'gView' ? '#fff' : '#232121',
+                    '--pseudoColorDView': clickedOverlay === 'dView' ? '#fff' : '#232121',
+                    duration: 0.5,
+                });
                 activeOverlay.value = clickedOverlay;
-                console.log(activeOverlay.value)
+                console.log(clickedOverlay)
             }
 
             onMounted(() => {
