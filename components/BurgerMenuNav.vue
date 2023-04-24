@@ -14,7 +14,7 @@
             <!-- <NuxtLink to="/boulevard" class="burger-menu__link">French boulevard</NuxtLink> -->
             <router-link class="burger-menu__link" to="/boulevard">French boulevard</router-link>
         </li>
-        <li @click="closeMenu" class="burger-menu__item">
+        <li class="burger-menu__item">
             <img class="burger-menu__item-arrow"  src="../static/right.svg" alt="go to">
             <!-- <NuxtLink to="/apartments" class="burger-menu__link">Choose apartments</NuxtLink> -->
             <router-link class="burger-menu__link" to="/apartments">Choose apartments</router-link>

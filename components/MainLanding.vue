@@ -88,7 +88,9 @@
                     <br/>
                     establishing a new quality standard
                     <br/>
-                    with a corresponding price threshold.
+                    with a corresponding price 
+                    <br/>
+                    threshold.
                 </div>
             </div>
            

@@ -50,3 +50,40 @@
   .burger-menu__item-arrow {
     margin-right: 20px;
   }
+
+
+@media screen and (max-width: 1200px) {
+  .burger-menu {
+    width: 35%;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .burger-menu {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .burger-menu {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .burger-menu {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .burger-menu {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .burger-menu {
+    width: 100%;
+  }
+}

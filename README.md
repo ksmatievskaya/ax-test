@@ -1,42 +1,24 @@
-# Nuxt 3 Minimal Starter
+# Test task on Nuxt js
+Landing page on Nuxt using GSAP animations.
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Vue3, Nuxt, vue-router, JavaScript, GSAP, ScrollyVideo, HTML, CSS
 
-## Setup
+## Description
 
-Make sure to install the dependencies:
+- Routing
+ Implememted 3 pages as main, /boulevard, /apartments using vue-router
 
-```bash
-# yarn
-yarn install
+ - Animations
+ for animations I am using GSAP and ScrollyVideo.js
+    - Video play on scroll
+    - Burger menu navigation
+    - Transition between pages using vue-router classes
+    - Changing screen background
+    - Selecting buildings
 
-# npm
-npm install
+## Installation
+To install this project: 
+1. just clone it fron repository
+2. install all dependencies with ``` npm install ```
+3. run dev server ``` nom run dev ```
 
-# pnpm
-pnpm install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

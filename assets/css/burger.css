@@ -17,3 +17,31 @@
     background-color: var(--brown);
     margin-top: 2px;
 }
+
+@media (max-width: 870px) { 
+    .burger {
+        margin-right: 55px;
+        height: 31px;
+        width: 70px;
+    }
+}
+
+@media (max-width: 680px) { 
+    .burger {
+        margin-right: 35px;
+    }
+}
+
+@media (max-width: 576px) { 
+    .burger {
+        height: 27px;
+        width: 55px;
+    }
+
+    .burger div {
+        width: 18px;
+        height: 2px;
+        background-color: var(--brown);
+        margin-top: 2px;
+    }
+}

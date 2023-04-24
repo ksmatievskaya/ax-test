@@ -172,7 +172,120 @@
     }
 
     .boulevard-video__scroll-img {
-      width: 115px;
-      height: 115px;
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  @media screen and (max-height: 610px) {
+    .boulevard-video__scroll-img_container {
+      margin-top: 440px;
+    }
+
+    .boulevard-video__scroll-img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  @media screen and (max-height: 560px) {
+    .boulevard-video__scroll-img_container {
+      margin-top: 410px;
+    }
+
+    .boulevard-video__scroll-img {
+      width: 70px;
+      height: 70px;
+    }
+  }
+
+  @media screen and (max-height: 520px) {
+    .boulevard-video__scroll-img_container {
+      margin-top: 400px;
+    }
+
+    .boulevard-video__scroll-img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  @media screen and (max-width: 1340px) {
+    .boulevard-video__top {
+      margin-left: 45%;
+    }
+  }
+
+  @media screen and (max-width: 1080px) {
+    .boulevard-video__top {
+      margin-left: 44%;
+    }
+
+    .boulevard-video__scroll-img {
+      margin-right: 110px;
+    }
+  }
+
+  @media screen and (max-width: 880px) {
+    .boulevard-video__top {
+      margin-left: 42%;
+      width: 60%;
+    }
+
+    .boulevard-video__scroll-img {
+      margin-right: 80px;
+    }
+
+    .boulevard-video__title {
+      font-size: 55px;
+      line-height: 59px;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .boulevard-video__top {
+      margin-left: 40%;
+      width: 60%;
+    }
+
+    .boulevard-video__scroll-img {
+      margin-right: 50px;
+    }
+
+    .boulevard-video__title {
+      font-size: 50px;
+      line-height: 54px;
+    }
+  }
+
+  @media screen and (max-width: 560px) {
+    .boulevard-video__top {
+      margin-left: 38%;
+      width: 63%;
+    }
+
+    .boulevard-video__scroll-img {
+      margin-right: 50px;
+    }
+
+    .boulevard-video__title {
+      font-size: 45px;
+      line-height: 49px;
+    }
+  }
+
+  @media screen and (max-width: 440px) {
+    .boulevard-video__top {
+      margin-left: 35%;
+      width: 67%;
+    }
+
+    .boulevard-video__scroll-img {
+      margin-right: 50px;
+    }
+
+    .boulevard-video__title {
+      font-size: 40px;
+      line-height: 45px;
     }
   }
