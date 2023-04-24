@@ -22,6 +22,7 @@ Vue3, Nuxt, vue-router, JavaScript, GSAP, ScrollyVideo, HTML, CSS
 
 - Adaptation
     - main page and /boulevard page has adapatation for all screen resoluions
+    ![](https://github.com/ksmatievskaya/ax-test/blob/main/static/adapt.gif)
     - page /apartments adaptation is in progress. Now it is adapted only for 1920x1080 screen resolution. Stay tuned....
 
 ## Installation
