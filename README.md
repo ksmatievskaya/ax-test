@@ -12,7 +12,7 @@ Vue3, Nuxt, vue-router, JavaScript, GSAP, ScrollyVideo, HTML, CSS
  - Animations
  for animations I am using GSAP and ScrollyVideo.js (below there are gift of all animations. wait for it to upload!) 
     - Video play on scroll
-    ![](https://github.com/ksmatievskaya/ax-test/blob/main/static/videoScroll.gif)
+    ![](https://github.com/ksmatievskaya/ax-test/blob/main/static/scrolly.gif)
     - Burger menu navigation and Transition between pages using vue-router classes
     ![](https://github.com/ksmatievskaya/ax-test/blob/main/static/burgerMenu.gif)
     - Changing screen background
