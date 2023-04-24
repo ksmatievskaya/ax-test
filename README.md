@@ -10,7 +10,7 @@ Vue3, Nuxt, vue-router, JavaScript, GSAP, ScrollyVideo, HTML, CSS
  Implememted 3 pages as main, /boulevard, /apartments using vue-router
 
  - Animations
- for animations I am using GSAP and ScrollyVideo.js
+ for animations I am using GSAP and ScrollyVideo.js (below there are gift of all animations. wait for it to upload!) 
     - Video play on scroll
     ![](https://github.com/ksmatievskaya/ax-test/blob/main/static/videoScroll.gif)
     - Burger menu navigation and Transition between pages using vue-router classes
@@ -27,7 +27,7 @@ Vue3, Nuxt, vue-router, JavaScript, GSAP, ScrollyVideo, HTML, CSS
 
 ## Installation
 To install this project: 
-1. just clone it fron repository
+1. just clone it from repository
 2. install all dependencies with ``` npm install ```
-3. run dev server ``` nom run dev ```
+3. run dev server ``` npm run dev ```
 
