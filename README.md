@@ -1,7 +1,7 @@
 # Test task on Nuxt js
 Landing page on Nuxt using GSAP animations.
 
-Vue3, Nuxt, vue-router, JavaScript, GSAP, ScrollyVideo, HTML, CSS
+Vue3, Nuxt, vue-router, JavaScript, GSAP, HTML, CSS
 
 ## Description
 
