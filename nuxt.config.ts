@@ -17,7 +17,6 @@ export default defineNuxtConfig({
         '@/assets/css/fonts.css',
         '@/assets/css/boulevard.css',
         '@/assets/css/burger.css',
-        '@/assets/css/testVideo.css',
         '@/assets/css/apartments.css',
         '@/assets/css/burgerMenu.css',
     ],

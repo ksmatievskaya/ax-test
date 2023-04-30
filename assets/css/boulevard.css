@@ -1,4 +1,14 @@
-
+  .boulevard-video__video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+  }
+  .boulevard-video__container {
+    height: 300vh;
+  }
   .boulevard-video__content {
     position: relative;
     padding-top: 32px;

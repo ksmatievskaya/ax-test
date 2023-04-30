@@ -10,9 +10,9 @@ Vue3, Nuxt, vue-router, JavaScript, GSAP, ScrollyVideo, HTML, CSS
  Implememted 3 pages as main, /boulevard, /apartments using vue-router
 
  - Animations
- for animations I am using GSAP and ScrollyVideo.js (below there are gifs of all animations. wait for it to upload!) 
-    - Video play on scroll
-    ![](https://github.com/ksmatievskaya/ax-test/blob/main/static/scrolly.gif)
+ for animations I am using GSAP (below there are gifs of all animations. wait for it to upload!) 
+    - Video play on scroll - using GSAP ScrollTrigger
+    ![](https://github.com/ksmatievskaya/ax-test/blob/main/static/scrollTriggerVideo.gif)
     - Burger menu navigation and Transition between pages using vue-router classes
     ![](https://github.com/ksmatievskaya/ax-test/blob/main/static/burgerMenu.gif)
     - Changing screen background

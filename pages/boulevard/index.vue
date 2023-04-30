@@ -1,4 +1,3 @@
 <template>
     <BoulevardVideo/>
-    <!-- <VideoTest  /> -->
 </template>

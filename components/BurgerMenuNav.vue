@@ -6,17 +6,14 @@
     <ul class="burger-menu__list">
         <li class="burger-menu__item">
             <img class="burger-menu__item-arrow" src="../static/right.svg" alt="go to">
-            <!-- <NuxtLink to="/" class="burger-menu__link">main</NuxtLink> -->
             <router-link class="burger-menu__link" to="/">main</router-link>
         </li>
         <li class="burger-menu__item">
             <img class="burger-menu__item-arrow" src="../static/right.svg" alt="go to">
-            <!-- <NuxtLink to="/boulevard" class="burger-menu__link">French boulevard</NuxtLink> -->
             <router-link class="burger-menu__link" to="/boulevard">French boulevard</router-link>
         </li>
         <li class="burger-menu__item">
             <img class="burger-menu__item-arrow"  src="../static/right.svg" alt="go to">
-            <!-- <NuxtLink to="/apartments" class="burger-menu__link">Choose apartments</NuxtLink> -->
             <router-link class="burger-menu__link" to="/apartments">Choose apartments</router-link>
         </li>
     </ul>
@@ -36,6 +33,7 @@
         const menu = ref(null);
         const menuVisible = ref(false);
 
+        // функция отрытия меню
         const openMenu = () => {
             menu.value.style.display = 'flex';
             gsap.to(menu.value, {
@@ -47,7 +45,7 @@
                 },
             });
             };
-
+        // функция закрытия меню
         const closeMenu = () => {
             gsap.to(menu.value, {
                 duration: 0.5,
@@ -58,7 +56,7 @@
                 },
             });
             };
-
+            // вотчер за состоянием isOpened, которое отвечает за открытие/закрытие меню
             watch(
                 () => props.isOpened,
                 (newVal, oldVal) => {

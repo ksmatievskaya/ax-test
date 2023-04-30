@@ -138,6 +138,7 @@
                 
             }
 
+            // анимация переключения вида 
             function handleView(e) {
                 // если на первом фоне, то при нажатии на левую стрелку - ничего не происходит
                 if(e.target.closest('#leftBtn') && isBoulevardView.value) {
@@ -151,6 +152,7 @@
                 isBoulevardView.value = !isBoulevardView.value
                 const newBgImgSrc = isBoulevardView.value ? (isDay.value ? '../static/dayApartment.png' : '../static/nightApartment.png') : '../static/backView.png';
                 bgImg.value.src = newBgImgSrc;
+                // плавность на переключение вида (fade in/out)
                 gsap.to(bgImg.value, {
                     duration: 0.4,
                     opacity: 0.2,
@@ -168,14 +170,15 @@
                 activeBuilding.value = active
             }
 
+
             function handleOverlay(e) {
                 const clickedOverlay = e.target.classList[0].split('-')[1];
+                // если кликнули на активное здание - ничего не происходит
                 if (activeOverlay.value === clickedOverlay) {
-                    // Clicked on the active overlay, so do nothing
                     return;
                 }
 
-                // Fade out the currently active overlay
+                // Fade out текущее активное здание
                 if (activeOverlay.value) {
                     gsap.to(`.apartments__overlay-${activeOverlay.value}`, {
                     opacity: 0,
@@ -186,6 +189,7 @@
                     duration: 0.5,
                     });
                 }
+                // fade in кликнутое здание
                 gsap.to(`.apartments__overlay-${clickedOverlay}`, {
                     opacity: 0.5,
                     duration: 0.5,
@@ -195,7 +199,7 @@
                     duration: 0.5,
                     ease: 'power1.outIn'
                     });
-
+                
                 gsap.to("html", {
                     '--pseudoColorA': clickedOverlay === 'a' ? '#fff' : '#232121',
                     '--pseudoColorB': clickedOverlay === 'b' ? '#fff' : '#232121',
